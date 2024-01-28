@@ -8,6 +8,7 @@ for (let i = 0; i < word.length; i++) {
 }
 
 let remainingLetters = word.length;
+let findedLetters = [];
 
 while (remainingLetters > 0) {
   alert(answerArray.join(" "));
@@ -16,10 +17,12 @@ while (remainingLetters > 0) {
     break;
   } else if (guess.length !== 1) {
     alert("Нужно ввести только одну букву");
+
   } else {
     for (let j = 0; j < word.length; j++) {
       if (word[j] === guess) {
         answerArray[j] = guess;
+        findedLetters.push(guess);
         remainingLetters--;
       }
     }
